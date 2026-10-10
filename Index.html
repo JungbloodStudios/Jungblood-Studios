@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jungblood Studios | LEGO Star Wars MOCs</title>
+    <style>
+        :root {
+            --bg-color: #0d0f12;
+            --card-bg: #161b22;
+            --accent: #ffb703;
+            --accent-hover: #ff9f00;
+            --text-main: #f0f6fc;
+            --text-muted: #8b949e;
+            --border: #30363d;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #161b22 0%, #0d0f12 100%);
+            border-bottom: 1px solid var(--border);
+            padding: 2rem 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-area h1 {
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+            color: var(--text-main);
+            text-transform: uppercase;
+        }
+
+        .logo-area h1 span {
+            color: var(--accent);
+        }
+
+        .logo-area p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-top: 0.3rem;
+        }
+
+        nav {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        section {
+            margin-bottom: 3.5rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--accent);
+            padding-left: 0.75rem;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: radial-gradient(circle at center, #1f2937 0%, var(--bg-color) 70%);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 2rem;
+        }
+
+        .hero h2 {
+            border: none;
+            padding: 0;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #000;
+            padding: 0.75rem 1.75rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.2s, transform 0.1s;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            margin-left: 1rem;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 183, 3, 0.1);
+            color: var(--accent);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            overflow: hidden;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .card:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            margin-bottom: 0.75rem;
+            color: var(--text-main);
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.2rem;
+        }
+
+        /* Formular Style */
+        form {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-main);
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: var(--bg-color);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-main);
+            font-size: 1rem;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        /* PayPal Box */
+        .paypal-box {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .paypal-box img {
+            width: 180px;
+            height: auto;
+            border-radius: 6px;
+            margin: 1rem auto;
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-area">
+            <h1>Jungblood <span>Studios</span></h1>
+            <p>Custom LEGO Star Wars MOCs & YouTube Shorts</p>
+        </div>
+        <nav>
+            <a href="#about">Über mich</a>
+            <a href="#mocs">MOCs & Galerie</a>
+            <a href="#youtube">YouTube</a>
+            <a href="#ebay">eBay-Shop</a>
+            <a href="#support">Unterstützen</a>
+            <a href="#contact">Kontakt</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h2>Willkommen bei Jungblood Studios</h2>
+            <p>Hier dreht sich alles um detailreiche LEGO Star Wars MOCs, gebaute Welten und kreative Bauprojekte.</p>
+            <a href="https://www.youtube.com/@JungbloodStudios" target="_blank" class="btn">YouTube Kanal ansehen</a>
+            <a href="https://ebay.us/m/xefEM5" target="_blank" class="btn btn-secondary">Zum eBay-Shop</a>
+        </div>
+
+        <!-- Über mich -->
+        <section id="about">
+            <h2>Über das Projekt</h2>
+            <div class="card">
+                <p>Moin! Ich bin der Kopf hinter Jungblood Studios. Auf meinem YouTube-Kanal präsentiere ich dir regelmäßige Einblicke in meine Custom LEGO Star Wars MOCs (My Own Creation), Zeitraffer-Videos und Shorts. Schau dich um und lass dich inspirieren!</p>
+            </div>
+        </section>
+
+        <!-- MOC Galerie -->
+        <section id="mocs">
+            <h2>MOCs & Galerie</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <img src="moc-hauptansicht.jpg" alt="LEGO Star Wars Großes MOC Diorama">
+                    <h3>Großes Dschungel-Diorama</h3>
+                    <p>Ein detaillierter Blick auf den gesamten Aufbau mit imperialer Basis, Landeplätzen und dichter Vegetation.</p>
+                </div>
+                <div class="card">
+                    <img src="moc-details.jpg" alt="MOC Detailaufnahme">
+                    <h3>Atmosphärische Details</h3>
+                    <p>Nahaufnahmen von Beleuchtung, Szenen und Figuren mitten im Geschehen.</p>
+                </div>
+                <div class="card">
+                    <img src="moc-licht-1.jpg" alt="Basis Beleuchtung und Sturmtruppen">
+                    <h3>Dschungelbasis bei Nacht</h3>
+                    <p>Sturmtruppen im Einsatz unter dem beleuchteten Vordach der Basis.</p>
+                </div>
+                <div class="card">
+                    <img src="moc-licht-2.jpg" alt="Basis Tor und Sturmtruppler">
+                    <h3>Das imperiale Tor</h3>
+                    <p>Ein Sturmtruppler sichert den Eingangsbereich der Anlage[span_12](start_span)[span_12](end_span).</p>
+                </div>
+                <div class="card">
+                    <img src="moc-licht-3.jpg" alt="Hintergrund und Schilder">
+                    <h3>Basis-Innere & Wandgrafiken</h3>
+                    <p>Eindrücke aus den Gängen mit integrierten Holo-Schildern und Leuchtelementen[span_13](start_span)[span_13](end_span).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- YouTube & eBay -->
+        <section id="youtube">
+            <h2>YouTube & eBay</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Neueste Videos</h3>
+                    <p>Verfolge alle Baufortschritte und Shorts direkt auf YouTube.</p>
+                    <a href="https://www.YouTube.com/@JungbloodStudios" target="_blank" class="btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Zum Kanal</a>
+                </div>
+                <div id="ebay" class="card">
+                    <h3>eBay-Shop besuchen</h3>
+                    <p>Schau in meinem eBay-Shop vorbei, um aktuelle Angebote und Teile zu finden.</p>
+                    <a href="https://ebay.us/m/xefEM5" target="_blank" class="btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Zum eBay-Shop</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- PayPal Support -->
+        <section id="support">
+            <h2>Kanal unterstützen</h2>
+            <div class="paypal-box">
+                <p>Wenn dir meine MOCs und Videos gefallen, kannst du mich hier ganz unkompliziert per PayPal unterstützen:</p>
+                <img src="paypal-qr.jpg" alt="PayPal QR-Code Linus Jungbluth">
+                <a href="https://www.paypal.com" target="_blank" class="btn" style="margin-top: 1rem; font-size: 0.9rem;">Direkt per PayPal Link</a>
+            </div>
+        </section>
+
+        <!-- Kontaktformular -->
+        <section id="contact">
+            <h2>Kontakt / Nachricht senden</h2>
+            <form action="mailto:Jungbloodstudios.mike@gmail.com" method="POST" enctype="text/plain">
+                <div class="form-group">
+                    <label for="name">Dein Name:</label>
+                    <input type="text" id="name" name="Name" required placeholder="Name eingeben...">
+                </div>
+                <div class="form-group">
+                    <label for="email">Deine E-Mail-Adresse:</label>
+                    <input type="email" id="email" name="Email" required placeholder="name@beispiel.de">
+                </div>
+                <div class="form-group">
+                    <label for="message">Deine Nachricht:</label>
+                    <textarea id="message" name="Nachricht" rows="5" required placeholder="Schreibe mir eine Nachricht..."></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer;">Nachricht absenden</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Jungblood Studios. Alle Rechte vorbehalten.</p>
+    </footer>
+
+</body>
+</html>
